@@ -1,0 +1,39 @@
+---
+
+  - hosts: all
+    sudo: yes
+
+    tasks:
+
+      - name: Install required libraries
+        yum: name={{ item }}  state=latest
+        with_items:
+          - bzip2
+          - gcc
+          - make
+          - perl
+          - kernel-devel
+          - kernel-headers
+
+      - name: Create folder
+        file: path=/tmp/vbox state=directory
+
+      - name: Get Virtualbox version
+        command: cat /home/vagrant/.vbox_version
+        register: vagrant_virtualbox_version
+
+      - name: Mount Guest Additions
+        command: mount -o loop /home/vagrant/VBoxGuestAdditions_{{ item }}.iso /tmp/vbox
+        with_items: vagrant_virtualbox_version.stdout_lines
+
+      - name: Run Guest Additions
+        shell: /tmp/vbox/VBoxLinuxAdditions.run
+
+      - name: Unmount Guest Additions
+        command: umount /tmp/vbox
+
+      - name: Delete folder
+        file: path=/tmp/vbox state=absent
+
+      - name: Delete files
+        file: path=/home/vagrant/*.iso state=absent

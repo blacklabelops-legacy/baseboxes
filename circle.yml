@@ -1,0 +1,13 @@
+machine:
+  environment:
+    PATH: "${HOME}/bin:${PATH}"
+
+dependencies:
+  cache_directories:
+    - "~/bin"
+  pre:
+    - circle/installPacker.sh
+
+test:
+  override:
+    - packer validate centos-7.1.503-minimal.json

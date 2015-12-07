@@ -1,0 +1,10 @@
+---
+
+  - hosts: all
+    sudo: yes
+
+    tasks:
+
+      - shell: echo "UseDNS no" >> /etc/ssh/sshd_config
+
+      - shell: echo "GSSAPIAuthentication no" >> /etc/ssh/sshd_config

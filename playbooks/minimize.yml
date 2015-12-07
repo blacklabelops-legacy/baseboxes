@@ -1,0 +1,12 @@
+---
+
+  - hosts: all
+    sudo: yes
+
+    tasks:
+
+      - command: dd if=/dev/zero of=/EMPTY bs=1M
+
+      - file: name="/EMPTY" state=absent
+
+      - command: sync

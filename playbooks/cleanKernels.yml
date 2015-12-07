@@ -1,0 +1,12 @@
+---
+
+  - hosts: all
+    sudo: yes
+
+    tasks:
+
+      - name: Install kernel utils
+        yum: name=yum-utils update_cache=yes state=latest
+
+      - name: Clean kernels
+        command: package-cleanup --oldkernels --count=1

@@ -9,4 +9,8 @@
         yum: name=yum-utils update_cache=yes state=latest
 
       - name: Clean kernels
-        command: package-cleanup --oldkernels --count=1
+        shell: package-cleanup --oldkernels --count=1
+        ignore_errors: yes
+
+      - name: Remove kernel utils
+        yum: name=yum-utils state=absent

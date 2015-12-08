@@ -45,17 +45,6 @@
      },
      {
         "type": "ansible-local",
-        "playbook_file": "playbooks/cleanKernels.yml"
-     },
-     {
-       "execute_command": "echo 'vagrant' | sudo -S -E bash '{{.Path}}'",
-       "scripts": [
-         "scripts/reboot.sh"
-       ],
-       "type": "shell"
-     },
-     {
-        "type": "ansible-local",
         "playbook_file": "playbooks/sshd.yml"
      },
      {
@@ -67,16 +56,22 @@
         "playbook_file": "playbooks/vagrant.yml"
      },
      {
-        "type": "ansible-local",
-        "playbook_file": "playbooks/virtualbox.yml"
+       "execute_command": "echo 'vagrant' | sudo -S -E bash '{{.Path}}'",
+       "scripts": [
+         "scripts/virtualbox.sh"
+       ],
+       "type": "shell"
      },
      {
         "type": "ansible-local",
         "playbook_file": "playbooks/cleanup.yml"
      },
      {
-        "type": "ansible-local",
-        "playbook_file": "playbooks/minimize.yml"
+       "execute_command": "echo 'vagrant' | sudo -S -E bash '{{.Path}}'",
+       "scripts": [
+         "scripts/minimize.sh"
+       ],
+       "type": "shell"
      }
    ],
     "post-processors": [

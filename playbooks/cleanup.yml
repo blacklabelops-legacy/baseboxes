@@ -5,16 +5,7 @@
 
     tasks:
 
-      - name: Install required libraries
-        yum: name={{ item }}  state=absent
-        with_items:
-          - gcc
-          - cpp
-          - kernel-devel
-          - kernel-headers
-          - perl
-
-      - name: Remove any extant jars
+      - name: Remove folders
         file: name="{{ item }}" state=absent
         with_items:
           - "~/VBoxGuestAdditions_*.iso"

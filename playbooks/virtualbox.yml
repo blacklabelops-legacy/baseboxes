@@ -19,21 +19,32 @@
         file: path=/tmp/vbox state=directory
 
       - name: Get Virtualbox version
-        command: cat /home/vagrant/.vbox_version
+        shell: cat /home/vagrant/.vbox_version
         register: vagrant_virtualbox_version
 
       - name: Mount Guest Additions
-        command: mount -o loop /home/vagrant/VBoxGuestAdditions_{{ item }}.iso /tmp/vbox
+        shell: mount -o loop /home/vagrant/VBoxGuestAdditions_{{ item }}.iso /tmp/vbox
         with_items: vagrant_virtualbox_version.stdout_lines
 
       - name: Run Guest Additions
-        shell: /tmp/vbox/VBoxLinuxAdditions.run
+        shell: sh /tmp/vbox/VBoxLinuxAdditions.run
+        ignore_errors: yes
 
       - name: Unmount Guest Additions
-        command: umount /tmp/vbox
+        shell: umount /tmp/vbox
 
       - name: Delete folder
         file: path=/tmp/vbox state=absent
 
       - name: Delete files
         file: path=/home/vagrant/*.iso state=absent
+
+      - name: Remove required libraries
+        yum: name={{ item }}  state=absent
+        with_items:
+          - gcc
+          - cpp
+          - make
+          - kernel-devel
+          - kernel-headers
+          - perl

@@ -12,7 +12,7 @@
         file: path=~vagrant/.ssh state=directory mode=0700
 
       - name: Download vagrant insecure key
-        command: wget --no-check-certificate 'https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub' -O ~vagrant/.ssh/authorized_keys
+        shell: wget --no-check-certificate 'https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub' -O ~vagrant/.ssh/authorized_keys
 
       - name: Access rights for key
         file: path=~vagrant/.ssh/authorized_keys state=file mode=0644

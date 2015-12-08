@@ -5,8 +5,8 @@
 
     tasks:
 
-      - command: dd if=/dev/zero of=/EMPTY bs=1M
+      - shell: dd if=/dev/zero of=/EMPTY bs=1M
 
       - file: name="/EMPTY" state=absent
 
-      - command: sync
+      - shell: sync

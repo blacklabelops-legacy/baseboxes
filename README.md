@@ -18,7 +18,7 @@ Build Example
 $ packer build centos-example.json
 ~~~~
 
-> Although
+> Build an example file, all other may contain Post-Processors which need additional software or credentials.
 
 # References
 

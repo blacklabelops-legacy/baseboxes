@@ -6,7 +6,7 @@
     tasks:
 
       - name: install wget
-        yum: name=wget update_cache=yes state=latest
+        yum: name=wget state=latest
 
       - name: Create folder for ssh keys
         file: path=~vagrant/.ssh state=directory mode=0700
@@ -14,5 +14,11 @@
       - name: Download vagrant insecure key
         shell: wget --no-check-certificate 'https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub' -O ~vagrant/.ssh/authorized_keys
 
+      - name: Set owner of ssh folder
+        file: path=~vagrant/.ssh state=directory recurse="yes" owner="vagrant"
+
       - name: Access rights for key
-        file: path=~vagrant/.ssh/authorized_keys state=file mode=0644
+        file: path=~vagrant/.ssh/authorized_keys state=file mode="go-rwsx"
+
+      - name: install wget
+        yum: name=wget state=absent

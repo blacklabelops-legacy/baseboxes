@@ -6,7 +6,7 @@
     tasks:
 
       - name: Install kernel utils
-        yum: name=yum-utils update_cache=yes state=latest
+        yum: name=yum-utils state=latest
 
       - name: Clean kernels
         shell: package-cleanup --oldkernels --count=1

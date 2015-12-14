@@ -52,10 +52,6 @@
         "playbook_file": "playbooks/vagrant.yml"
      },
      {
-        "type": "ansible-local",
-        "playbook_file": "playbooks/vagrant.yml"
-     },
-     {
        "execute_command": "echo 'vagrant' | sudo -S -E bash '{{.Path}}'",
        "scripts": [
          "scripts/virtualbox.sh"

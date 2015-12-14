@@ -1,6 +1,20 @@
 #!/bin/sh
 
-yum -y remove ansible
+# clean up redhat interface persistence
+rm -f /etc/udev/rules.d/70-persistent-net.rules
+
+for ndev in $(ls /etc/sysconfig/network-scripts/ifcfg-*); do
+  if [ "$(basename ${ndev})" != "ifcfg-lo" ]; then
+    sed -i '/^HWADDR/d' ${ndev}
+    sed -i '/^UUID/d' ${ndev}
+  fi
+done
+
+yum -y remove centos-logos hwdata os-prober gettext* \
+  freetype dracut firewalld dbus-python ebtables \
+  gobject-introspection libselinux-python pygobject3-base \
+  python-decorator
+
 yum -y clean all && rm -rf /var/cache/yum/*
 
 swapuuid=$(/sbin/blkid -o value -l -s UUID -t TYPE=swap)
@@ -35,7 +49,5 @@ if [ "$swappart" != "" ]; then
   mkswap $swappart;
   swapon $swappart;
 fi
-
-
 
 sync

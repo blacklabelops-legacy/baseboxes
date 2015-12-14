@@ -42,9 +42,9 @@
       - name: Remove required libraries
         yum: name={{ item }}  state=absent
         with_items:
+          - bzip2
           - gcc
-          - cpp
           - make
+          - perl
           - kernel-devel
           - kernel-headers
-          - perl

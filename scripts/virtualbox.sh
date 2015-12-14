@@ -11,4 +11,3 @@ rmdir /tmp/vbox
 rm /home/vagrant/*.iso
 
 yum -y remove bzip2 gcc make perl kernel-devel-`uname -r` kernel-headers-`uname -r`
-yum -y clean all

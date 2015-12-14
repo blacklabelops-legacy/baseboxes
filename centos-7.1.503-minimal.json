@@ -90,7 +90,8 @@
      {
        "type":                    "vagrant",
        "compression_level":       9,
-       "keep_input_artifact":     false
+       "keep_input_artifact":     false,
+       "output":                  "vagrant-centos-7-1503-01-minimal.box"
      },
      {
        "type": "atlas",

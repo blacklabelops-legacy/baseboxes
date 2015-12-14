@@ -86,7 +86,10 @@
      }
    ],
    "post-processors": [
-     [
+     [{
+            "type": "vagrant",
+            "keep_input_artifact": false
+        },
      {
        "type": "atlas",
        "artifact": "blacklabelops/centos-7.1.1503",

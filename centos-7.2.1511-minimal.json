@@ -86,15 +86,20 @@
      }
    ],
    "post-processors": [
-     [
+     [{
+            "type": "vagrant",
+            "keep_input_artifact": false
+        },
      {
        "type": "atlas",
        "artifact": "blacklabelops/centos-7.2.1511",
        "artifact_type": "vagrant.box",
        "token": "{{user `atlas_token`}}",
        "metadata": {
+         "provider": "virtualbox",
          "version": "{{isotime \"2006.0102.030405\"}}",
          "created_at": "{{timestamp}}",
+         "auto_release": "true"
        }
      }
    ]

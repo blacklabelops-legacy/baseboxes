@@ -37,7 +37,8 @@
         file: path=/tmp/vbox state=absent
 
       - name: Delete files
-        file: path=/home/vagrant/*.iso state=absent
+        file: path=/home/vagrant/VBoxGuestAdditions_{{ item }}.iso state=absent
+        with_items: vagrant_virtualbox_version.stdout_lines
 
       - name: Remove required libraries
         yum: name={{ item }}  state=absent

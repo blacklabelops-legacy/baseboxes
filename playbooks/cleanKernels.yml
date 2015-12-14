@@ -9,8 +9,4 @@
         yum: name=yum-utils state=latest
 
       - name: Clean kernels
-        shell: package-cleanup --oldkernels --count=1
-        ignore_errors: yes
-
-      - name: Remove kernel utils
-        yum: name=yum-utils state=absent
+        shell: package-cleanup --oldkernels --count=1 -y

@@ -8,7 +8,6 @@
       - name: Remove folders
         file: name="{{ item }}" state=absent
         with_items:
-          - "~/VBoxGuestAdditions_*.iso"
           - "/tmp/chef*rpm"
           - "/var/cache/yum/*"
           - "/etc/udev/rules.d/70-persistent-net.rules"

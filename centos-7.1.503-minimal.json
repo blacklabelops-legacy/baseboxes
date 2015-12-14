@@ -98,54 +98,6 @@
          "created_at": "{{timestamp}}",
          "auto_release": "true"
        }
-     },
-     {
-       "type": "atlas",
-       "artifact": "blacklabelops/centos-7.1",
-       "artifact_type": "vagrant.box",
-       "token": "{{user `atlas_token`}}",
-       "metadata": {
-         "provider": "virtualbox",
-         "version": "{{isotime \"2006.0102.030405\"}}",
-         "created_at": "{{timestamp}}",
-         "auto_release": "true"
-       }
-     },
-     {
-       "type": "atlas",
-       "artifact": "blacklabelops/centos-minimal-7.1",
-       "artifact_type": "vagrant.box",
-       "token": "{{user `atlas_token`}}",
-       "metadata": {
-         "provider": "virtualbox",
-         "version": "{{isotime \"2006.0102.030405\"}}",
-         "created_at": "{{timestamp}}",
-         "auto_release": "true"
-       }
-     },
-     {
-       "type": "atlas",
-       "artifact": "blacklabelops/centos-7.1.503",
-       "artifact_type": "vagrant.box",
-       "token": "{{user `atlas_token`}}",
-       "metadata": {
-         "provider": "virtualbox",
-         "version": "{{isotime \"2006.0102.030405\"}}",
-         "created_at": "{{timestamp}}",
-         "auto_release": "true"
-       }
-     },
-     {
-       "type": "atlas",
-       "artifact": "blacklabelops/centos-minimal-7.1.503",
-       "artifact_type": "vagrant.box",
-       "token": "{{user `atlas_token`}}",
-       "metadata": {
-         "provider": "virtualbox",
-         "version": "{{isotime \"2006.0102.030405\"}}",
-         "created_at": "{{timestamp}}",
-         "auto_release": "true"
-       }
      }
    ]
   ]

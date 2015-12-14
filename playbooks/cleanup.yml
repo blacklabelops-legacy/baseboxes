@@ -9,5 +9,6 @@
         file: name="{{ item }}" state=absent
         with_items:
           - "/tmp/chef*rpm"
+          - "/tmp/*"
           - "/var/cache/yum/*"
           - "/etc/udev/rules.d/70-persistent-net.rules"

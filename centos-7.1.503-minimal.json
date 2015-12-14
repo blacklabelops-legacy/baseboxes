@@ -67,6 +67,13 @@
         "playbook_file": "playbooks/virtualbox.yml"
      },
      {
+       "execute_command": "echo 'vagrant' | sudo -S -E bash '{{.Path}}'",
+       "scripts": [
+         "scripts/cleanPackagesMinimal.sh"
+       ],
+       "type": "shell"
+     },
+     {
         "type": "ansible-local",
         "playbook_file": "playbooks/cleanup.yml"
      },

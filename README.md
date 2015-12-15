@@ -89,7 +89,7 @@ Note: You will loose all local Vagrant Boxes! This will also corrupt not destroy
 $ rm -rf ~/.vagrant.d/boxes/*
 ~~~~
 
-# Build
+# Build a Box
 
 Requires
 
@@ -103,7 +103,7 @@ Build Example
 $ packer build centos-example.json
 ~~~~
 
-> Build an example file, all other contain Atlas Post-Processors which need additional credentials.
+> Build an example file, all other contain Atlas Post-Processors specifically for blacklabelops repositories. You will have to adjust the post-processor artifact names.
 
 # References
 

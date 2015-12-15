@@ -1,35 +1,31 @@
-# BlackLabelOps/CentOS/!ATLAS_VERSION!
+# Blacklabelops Vagrant Box
 
-## Vagrant Box from CentOS 7.x
+Daily build base box with latest packages and kernel.
 
-This is a Vagrant Box, never use it in Production!
+This is a Vagrant Box for Development, never use it in Production!
 
-## Installed
+# Installed
 
-* Centos 7.1 Base Box release!
+* Centos Base Box release!
 
-## Init
+# Usage
 
-### Latest Version
+Latest Version
 
 ~~~~
-$ vagrant init blacklabelops/centos
+$ vagrant init !ATLAS_USER!/!ATLAS_BOX!
 $ vagrant up
 ~~~~
 
-### Fix Version
+Fix Version
 
 ~~~~
-$ vagrant init blacklabelops/centos https://atlas.hashicorp.com/blacklabelops/boxes/centos/versions/!ATLAS_VERSION!
+$ vagrant init !ATLAS_USER!/!ATLAS_BOX! https://atlas.hashicorp.com/!ATLAS_USER!/boxes/!ATLAS_BOX!/versions/!ATLAS_VERSION!
 $ vagrant up
 ~~~~
 
-## Build
+# Build
 
-## Latest Version
+Build and project information can be found under:
 
-Github [BlackLabelOps/PackerCentOS](https://github.com/blacklabelops/packercentos)
-
-## This Version
-
-Github [BlackLabelOps/PackerCentOS](https://github.com/blacklabelops/packercentos/tree/!ATLAS_VERSION!)
+Github [blacklabelops/baseboxes](https://github.com/blacklabelops/baseboxes)

@@ -89,7 +89,7 @@
      [{
             "type": "vagrant",
             "keep_input_artifact": false,
-            "compression_level":       9,
+            "compression_level":       9
         },
      {
        "type": "atlas",

@@ -10,4 +10,7 @@ dependencies:
 
 test:
   override:
-    - packer validate centos-7.1.503-minimal.json
+    - packer validate centos-7.1.1503-minimal.json
+    - packer validate centos-7.2.1511-minimal.json
+    - packer validate centos7.json
+    - packer validate centos-example.json

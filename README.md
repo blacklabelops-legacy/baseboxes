@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/blacklabelops/baseboxes.svg?style=svg)](https://circleci.com/gh/blacklabelops/baseboxes)
+
 Vagrant Virtualbox Baseboxes for automated Atlas Builds
 
 Hashicorp Atlas introduced periodic builds for Virtualbox Vagrant Boxes. I use this for daily updatet boxes with the latest kernels and packages.

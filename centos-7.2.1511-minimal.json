@@ -1,7 +1,6 @@
 {
     "variables": {
-        "atlas_token": "{{env `ATLAS_TOKEN`}}",
-        "atlas_artifact": "{{env `ATLAS_BASE_ARTIFACT_AWS_AMI_ID`}}"
+        "atlas_token": "{{env `ATLAS_TOKEN`}}"
     },
     "builders": [
       {
@@ -94,7 +93,7 @@
         },
      {
        "type": "atlas",
-       "artifact": "{{user `atlas_artifact`}}",
+       "artifact": "blacklabelops/centos-7.2.1511",
        "artifact_type": "vagrant.box",
        "token": "{{user `atlas_token`}}",
        "metadata": {
